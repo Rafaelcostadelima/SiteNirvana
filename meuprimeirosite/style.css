@@ -4,7 +4,7 @@
 #242a2f (cinza claro)
 #2a2b39 (o cinza mais claro da paleta)
 */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,12 +14,12 @@
 }
 
 
-body{
+body {
     background-color: #111112;
     color: floralwhite;
 }
 
-header{
+header {
     background-color: #2a2b39;
     padding: 30px;
     width: 100%;
@@ -28,7 +28,7 @@ header{
     z-index: 1000;
 }
 
-h1{
+h1 {
     text-align: center;
     font-size: 3em;
     color: #e7e113;
@@ -38,7 +38,7 @@ h1{
     margin-bottom: 20px;
 }
 
-h2{
+h2 {
     font-size: 1.5em;
     color: #bdb831;
     text-align: left;
@@ -47,69 +47,69 @@ h2{
     font-style: normal;
 }
 
-ul{
+ul {
     margin-left: 2em;
 }
 
-nav ul{
+nav ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-nav ul li{
+nav ul li {
     margin-left: 20px;
     font-size: large;
 }
 
-nav ul li a{
+nav ul li a {
     color: whitesmoke;
     text-decoration: none;
 }
 
-header .container{
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.logo img{
+.logo img {
     display: flex;
     max-width: 90px;
 }
 
-.logo a{
+.logo a {
     text-decoration: none;
     color: whitesmoke;
     transition: ease-in-out 0.2s;
 }
 
-.logo:hover{
+.logo:hover {
     transition: ease-in-out 0.2s;
     transform: scale(104%);
     cursor: pointer;
 }
 
-a:hover{
+a:hover {
     color: #e7e113;
 }
 
-#sobre{
+#sobre {
     padding: 1.3em;
 }
 
-#sobre .sobre-container .sobre-texto p{
+#sobre .sobre-container .sobre-texto p {
     margin-bottom: 40px;
 }
 
-#compositores{
+#compositores {
     margin-left: 15px;
     margin-right: 15px;
 }
 
-#curiosidades{
+#curiosidades {
     padding-right: 1.3em;
     padding-top: 2em;
 }
@@ -118,9 +118,9 @@ a:hover{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 90%; 
-    max-width: 350px; 
-    height: auto; 
+    width: 90%;
+    max-width: 350px;
+    height: auto;
     clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
 }
 
@@ -128,7 +128,7 @@ a:hover{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; 
+    gap: 20px;
     padding: 0 5%;
     margin-bottom: 65px;
 }
@@ -138,22 +138,22 @@ a:hover{
     text-align: center;
 }
 
-.hex:hover{
+.hex:hover {
     transform: scale(0.98);
 }
 
-#albuns h1{
+#albuns h1 {
     margin-bottom: 20px;
 }
 
-p{
+p {
     text-indent: 1.3em;
     font-size: 1em;
     margin-right: 3px;
     margin-left: 2px;
 }
 
-.banner{
+.banner {
     background: url(img/Banner.jpg) no-repeat center/cover;
     height: 600px;
     display: flex;
@@ -169,7 +169,7 @@ p{
     padding-right: 30px;
 }
 
-.banner2{
+.banner2 {
     background: url(img/banner2.jpg) no-repeat center/cover;
     height: 600px;
     display: flex;
@@ -185,44 +185,54 @@ p{
     padding-right: 30px;
 }
 
-.banner2 p{
+.banner2 p {
     text-indent: 0em;
 }
 
-section{
+section {
     scroll-margin-top: 100px;
 }
 
-#compositores .container{
-    display: grid; /* Transforma o layout em uma grade (grid) */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; /*Inclui um espaçamento entre as imagens*/
+#compositores .container {
+    display: grid;
+    /* Transforma o layout em uma grade (grid) */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    /*Inclui um espaçamento entre as imagens*/
     margin-top: 1.3em;
     text-align: center;
 }
 
-#compositores .item{
+#compositores .item {
     background-color: #32363a;
     font-size: 1em;
-    border: 4px solid #888525; /*Coloca uma borda*/
-    border-radius: 20px; /*arredonda as bordas*/
-    padding: 20px; /*Cria um espaçamento entre a borda e o conteúdo*/
-    box-shadow: 3px 4px 10px rgb(255, 255, 255); /*Cria uma sombra */
-    transition: transform 0.8s ease-out, box-shadow 0.8s ease-in; /*faz uma transição ao passar o mouse por cima*/
-    cursor: pointer; /*Transforma o mouse em ponteiro*/
+    border: 4px solid #888525;
+    /*Coloca uma borda*/
+    border-radius: 20px;
+    /*arredonda as bordas*/
+    padding: 20px;
+    /*Cria um espaçamento entre a borda e o conteúdo*/
+    box-shadow: 3px 4px 10px rgb(255, 255, 255);
+    /*Cria uma sombra */
+    transition: transform 0.8s ease-out, box-shadow 0.8s ease-in;
+    /*faz uma transição ao passar o mouse por cima*/
+    cursor: pointer;
+    /*Transforma o mouse em ponteiro*/
 }
 
-#compositores .item:hover{
-    transform: translateY(-5px); /*Levanta o card levemente*/
+#compositores .item:hover {
+    transform: translateY(-5px);
+    /*Levanta o card levemente*/
     box-shadow: 2px 4px 6px rgb(189, 189, 189, 0.2);
 }
 
-#compositores .item:active{
-    transform: scale(0.98); /*Diminui minimamente o card ao clicar*/
+#compositores .item:active {
+    transform: scale(0.98);
+    /*Diminui minimamente o card ao clicar*/
     box-shadow: 0px 4px 6px rgb(189, 189, 189);
 }
 
-#compositores .item h3{
+#compositores .item h3 {
     color: #888525;
     text-align: center;
     font-size: 1.6em;
@@ -231,14 +241,14 @@ section{
     font-style: normal;
 }
 
-#compositores .item p{
+#compositores .item p {
     margin-top: 15px;
     font-size: 0.95em;
     color: floralwhite;
     margin-bottom: 1.8em;
 }
 
-#compositores .item img{
+#compositores .item img {
     display: block;
     width: 100%;
     max-width: 500px;
@@ -251,12 +261,12 @@ section{
     box-shadow: 4px 2px 10.6px 4px #6c757e;
 }
 
-#compositores .container h1{
+#compositores .container h1 {
     grid-column: 1 / -1;
     margin-bottom: 20px;
 }
 
-.contato-container{
+.contato-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -264,7 +274,7 @@ section{
     font-size: 1.6em;
 }
 
-.modal{
+.modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -287,7 +297,7 @@ section{
     cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #888421;
     color: aliceblue;
     transform: scale(0.99);
@@ -303,7 +313,7 @@ section{
     cursor: pointer;
 }
 
-.btn2:hover{
+.btn2:hover {
     background-color: #888421;
     color: aliceblue;
     transform: scale(0.99);
@@ -319,17 +329,17 @@ section{
     cursor: pointer;
 }
 
-.btn3:hover{
+.btn3:hover {
     background-color: #888421;
     color: aliceblue;
     transform: scale(0.99);
 }
 
-.modal:target{
+.modal:target {
     display: flex;
 }
 
-.modal-content{
+.modal-content {
     background-color: rgba(58, 58, 58, 0.815);
     padding: 30px;
     border-radius: 20px;
@@ -342,7 +352,7 @@ section{
     overflow-y: auto;
 }
 
-.modal-content h3{
+.modal-content h3 {
     color: #888525;
     font-size: 1.5em;
     margin-bottom: 0.5em;
@@ -351,11 +361,11 @@ section{
     font-style: normal;
 }
 
-.modal-content p{
+.modal-content p {
     color: rgb(221, 221, 220);
 }
 
-.close-btn{
+.close-btn {
     margin-top: 20px;
     display: inline-block;
     padding: 8px 16px;
@@ -365,19 +375,19 @@ section{
     text-decoration: none;
 }
 
-.close-btn:hover{
+.close-btn:hover {
     background: rgb(146, 16, 16);
     color: aliceblue;
     transform: scale(0.99);
 }
 
-.grid{
+.grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
 
-.grid img{
+.grid img {
     width: 85%;
     height: auto;
     object-fit: cover;
@@ -389,15 +399,15 @@ section{
     margin-bottom: 25px;
 }
 
-.grid img:hover{
+.grid img:hover {
     transform: translateY(-5px);
 }
 
-.galeria{
+.galeria {
     padding: 20px;
 }
 
-.container-form{
+.container-form {
     display: flex;
     margin: auto;
     border-radius: 50px;
@@ -408,23 +418,23 @@ section{
     box-shadow: rgb(94, 95, 95) 4px 4px 25px 2px;
 }
 
-footer{
+footer {
     padding: 20px;
     margin-bottom: 15px;
     margin-top: 30px;
 }
 
-.mensagem-container{
+.mensagem-container {
     margin-top: 7%;
 }
 
-#menagem{
+#menagem {
     border-radius: 15px;
 }
 
-#botao{
+#botao {
     display: inline-block;
-    padding: 10px 25px ;
+    padding: 10px 25px;
     background-color: #bdb831;
     color: aliceblue;
     text-decoration: none;
@@ -432,14 +442,34 @@ footer{
     cursor: pointer;
 }
 
-#botao:hover{
+#botao:hover {
     background-color: #888421;
     color: aliceblue;
     transform: scale(0.99);
 }
 
-@media (max-width:1300px){
-    .banner2{
+.container-tabela {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+table,
+td {
+    padding: 10px;
+    border: gray solid 1px;
+}
+
+thead {
+    padding: 20px;
+    background-image: linear-gradient(to bottom right, #bdb831, #888525);
+    color: #111112;
+    border: gray solid 1px;
+}
+
+@media (max-width:1300px) {
+    .banner2 {
         background: url(img/banner2.jpg) no-repeat center/cover;
         height: 470px;
         font-size: 2.4em;
@@ -451,17 +481,17 @@ footer{
     }
 }
 
-@media (max-width:850px){
-    header{
+@media (max-width:850px) {
+    header {
         padding: 20px;
     }
-    
-    header .container{
+
+    header .container {
         flex-direction: column;
         text-align: center;
     }
 
-    nav ul{
+    nav ul {
         margin-top: 10px;
         flex-direction: column;
     }
@@ -471,12 +501,12 @@ footer{
         flex-basis: 90%;
     }
 
-    .hex-grid{
+    .hex-grid {
         justify-content: center;
         gap: 30px;
     }
 
-    section{
+    section {
         scroll-margin-top: 200px;
     }
 
@@ -490,17 +520,17 @@ footer{
         text-align: left;
     }
 
-    h3{
+    h3 {
         font-size: 0.6em;
     }
 
-    .modal-content{
+    .modal-content {
         max-width: 450px;
         height: 400px;
         margin-top: 150px;
     }
 
-    .modal-content h3{
+    .modal-content h3 {
         color: #888525;
         font-size: 1.6em;
         margin-bottom: 0.5em;
@@ -508,20 +538,20 @@ footer{
         font-weight: 300;
         font-style: normal;
     }
-    
-    .modal-content p{
+
+    .modal-content p {
         color: rgb(221, 221, 220);
         font-size: 1.3em;
-    }    
+    }
 
-    p{
+    p {
         text-indent: 0.7em;
         font-size: 0.7em;
         margin-right: 2px;
         margin-left: 1px;
     }
 
-    .banner{
+    .banner {
         height: 470px;
         display: flex;
         flex-direction: column;
@@ -532,29 +562,31 @@ footer{
         padding-right: 10px;
     }
 
-    #curiosidades ul{
+    #curiosidades ul {
         font-size: 0.7em;
     }
 
-    #compositores .container{
-        display: grid; /* Transforma o layout em uma grade (grid) */
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 20px; /*Inclui um espaçamento entre as imagens*/
+    #compositores .container {
+        display: grid;
+        /* Transforma o layout em uma grade (grid) */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        /*Inclui um espaçamento entre as imagens*/
         margin-top: 1.3em;
         text-align: center;
     }
 
-    #compositores .item{
+    #compositores .item {
         font-size: 0.7em;
     }
 
-    .grid{
+    .grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
 
-    .grid img{
+    .grid img {
         width: 85%;
         height: auto;
         object-fit: cover;
@@ -566,48 +598,50 @@ footer{
         margin-bottom: 25px;
     }
 
-    .grid img:hover{
+    .grid img:hover {
         transform: translateY(-5px);
     }
 
-    .galeria{
+    .galeria {
         padding: 20px;
     }
 
-    #contato{
+    #contato {
         padding: 15px;
     }
 }
 
-@media (max-width: 450px){
-    h1{
+@media (max-width: 450px) {
+    h1 {
         text-align: center;
         font-size: 1.2em;
     }
 
-    #compositores .container{
-        display: grid; /* Transforma o layout em uma grade (grid) */
-        grid-template-columns: repeat(1, 1fr); 
-        gap: 20px; /*Inclui um espaçamento entre as imagens*/
+    #compositores .container {
+        display: grid;
+        /* Transforma o layout em uma grade (grid) */
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        /*Inclui um espaçamento entre as imagens*/
         margin-top: 1.3em;
         text-align: center;
     }
 
-    .modal-content{
+    .modal-content {
         max-width: 400px;
         font-size: 20px;
         margin-top: 250px;
     }
 }
 
-@media(max-width: 450px){
-    .grid{
+@media(max-width: 450px) {
+    .grid {
         display: grid;
-        grid-template-columns: repeat(1, 1fr); 
+        grid-template-columns: repeat(1, 1fr);
         gap: 15px;
     }
 
-    .grid img{
+    .grid img {
         width: 85%;
         height: auto;
         object-fit: cover;
@@ -619,26 +653,26 @@ footer{
         margin-bottom: 25px;
     }
 
-    .grid img:hover{
+    .grid img:hover {
         transform: translateY(-5px);
     }
 
-    .galeria{
+    .galeria {
         padding: 20px;
     }
 }
 
-@media (max-width: 321px){
-    h1{
+@media (max-width: 321px) {
+    h1 {
         text-align: center;
         font-size: 1.1em;
     }
 
-    h2{
+    h2 {
         font-size: 0.7em;
     }
 
-    .modal-content{
+    .modal-content {
         max-width: 300px;
         height: 400px;
         margin-top: 200px;
