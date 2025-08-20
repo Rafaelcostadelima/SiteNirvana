@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirvana</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/Nirvana.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Candal&family=Holtwood+One+SC&family=Notable&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/meuprimeirosite/index.html"><img src="/meuprimeirosite/img/NirvanaLogo.png" alt="Logo do Nirvana em amarelo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/meuprimeirosite/index.html#introducao">Introdução</a></li>
+                    <li><a href="/meuprimeirosite/index.html#sobre">Sobre</a></li>
+                    <li><a href="/meuprimeirosite/index.html#compositores">Compositores</a></li>
+                    <li><a href="/meuprimeirosite/index.html#curiosidades">Curiosidades</a></li>
+                    <li><a href="/meuprimeirosite/index.html#albuns">Álbuns</a></li>
+                    <li><a href="/meuprimeirosite/contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="introducao" class="banner2">
+        <p><strong>Tire suas dúvidas aqui!</strong></p>
+        <br>
+    </section>
+    <main>
+        <section id="contato">
+            <h1>Contato</h1>
+            <div class="container-form">
+                <form class="formulario-contato" action="https://formsubmit.co/rafita.limagames@gmail.com" method="POST">
+                    <div class="nome-container">
+                        <label for="Nome completo">Nome completo:</label><br>
+                        <input type="text" id="Nome completo" name="Nome completo" value="">
+                    </div>
+                    <div class="email-container">
+                        <label for="Email">Email:</label><br>
+                        <input type="email" id="Email" name="Email" value="">
+                    </div>
+                    <div class="nascimento-container">
+                        <label for="Data de nascimento">Data de nascimento:</label><br>
+                        <input type="date" id="Data de nascimento" name="Data de nascimento">
+                    </div>
+                    <div class="membro-container">
+                        <label for="Membro favorito">Qual o seu membro favorito do Nirvana?</label><br>
+                        <select name="Membro favorito" id="Membro favorito">
+                            <option value="Kurt Cobain">Kurt Cobain</option>
+                            <option value="Krist Novoselic">Krist Novoselic</option>
+                            <option value="Dave Grohl">Dave Grohl</option>
+                        </select>
+                    </div>
+                    <div class="instrumento-container">
+                        <label for="Instrumento">Qual seu instrumento que gosta?</label><br>
+                        <input type="radio" id="baixo" name="instrumento" value="Baixo"> Baixo<br>
+                        <input type="radio" id="guitarrah" name="instrumento" value="Guitarra harmônica"> Guitarra harmônica <br>
+                        <input type="radio" id="guitarrap" name="instrumento" value="Guitarra principal"> Guitarra principal <br>
+                        <input type="radio" id="bateria" name="instrumento" value="Bateria"> Bateria
+                    </div>
+                    <div class="genero-container">
+                        <label for="Genero">Gênero:</label><br>
+                        <input list="Genero">
+                        <datalist id="Genero">
+                            <option value="Masculino">
+                            <option value="Feminino">
+                        </datalist>
+                    </div>
+                    <div class="mensagem-container">
+                        <label>Escreva um comentário sobre a banda Nirvana:</label><br>
+                        <textarea name="Mensagem" id="mensagem" rows="10" cols="30"></textarea><br><br>
+                    </div>
+                    <div>
+                        <input type="submit" value="Enviar" id="botao">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="">
+                    </div>
+                    
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 - Criado por Rafael Lima - Todos os Direitos reservados</p>
+    </footer>
+</body>
+</html>
