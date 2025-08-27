@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirvana - Jogo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="jogo.css">
+    <link rel="shortcut icon" href="img/Nirvana.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Candal&family=Holtwood+One+SC&family=Notable&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/meuprimeirosite/index.html"><img src="/meuprimeirosite/img/NirvanaLogo.png" alt="Logo do Nirvana em amarelo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/meuprimeirosite/index.html#introducao">Introdução</a></li>
+                    <li><a href="/meuprimeirosite/index.html#sobre">Sobre</a></li>
+                    <li><a href="/meuprimeirosite/index.html#compositores">Compositores</a></li>
+                    <li><a href="/meuprimeirosite/index.html#curiosidades">Curiosidades</a></li>
+                    <li><a href="/meuprimeirosite/index.html#albuns">Álbuns</a></li>
+                    <li><a href="/meuprimeirosite/contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="game-section">
+            <h1>Jogo do Nirvana</h1>
+            <p>Arraste os nomes abaixo para suas respectivas casas: </p>
+            <div class="game-board">
+                <div id="game-title">Quiz sobre os Nirvana</div>
+                
+                <div id="top-left" class="drop-zone" data-category="membro">Membro da Banda</div>
+                <div id="top-right" class="drop-zone" data-category="album">Álbum</div>
+                <div id="bottom-left" class="drop-zone" data-category="nome-antigo">Nome Antigo da Banda</div>
+                <div id="bottom-right" class="drop-zone" data-category="curiosidade">Curiosidade</div>
+            </div>
+
+            <div id="options-container"> 
+                <div class="draggable" draggable="true" id="drag1" data-category="album">Nevermind</div>
+                <div class="draggable" draggable="true" id="drag2" data-category="membro">Dave Grohl</div>
+                <div class="draggable" draggable="true" id="drag3" data-category="nome-antigo">Pen Cap Chew</div>
+                <div class="draggable" draggable="true" id="drag4" data-category="curiosidade">Bebê da capa processou a banda</div>
+                <div class="draggable" draggable="true" id="drag5" data-category="membro">Krist Novoselic</div>
+                <div class="draggable" draggable="true" id="drag6" data-category="album">Bleach</div>
+                <div class="draggable" draggable="true" id="drag7" data-category="membro">Kurt Cobain</div>
+                <div class="draggable" draggable="true" id="drag8" data-category="album">In Utero</div>
+                <div class="draggable" draggable="true" id="drag9" data-category="nome-antigo">Skid Row</div>
+                <div class="draggable" draggable="true" id="drag10" data-category="curiosidade">Origem do nome "Teen Spirit"</div>
+                <div class="draggable" draggable="true" id="drag11" data-category="album">Incesticide</div>
+                <div class="draggable" draggable="true" id="drag12" data-category="curiosidade">'Nevermind' Quase se Chamou 'Sheep'</div>
+            </div>
+            
+            <div id="win-message">Parabéns, você completou o quiz!</div>
+        </section>
+    </main>
+    
+    <!-- Início da seção do Rodapé, que aparece no final da página -->
+    <footer> 
+        <!-- O parágrafo <p> contém o texto de direitos autorais e informações de criação do site -->
+        <p>&copy; 2025 - Criado por Rafael Lima - Todos os Direitos reservados</p> 
+    </footer> <!-- Fim da seção do Rodapé -->
+
+    <!-- Inicia o bloco de código JavaScript que controla toda a interatividade do jogo -->
+    <script> 
+        // Declara constantes para armazenar referências a elementos HTML importantes que serão usados várias vezes
+        const draggables = document.querySelectorAll('.draggable'); // Lista de todos os itens arrastáveis
+        const dropZones = document.querySelectorAll('.drop-zone'); // Lista de todas as zonas de soltar
+        const optionsContainer = document.getElementById('options-container'); // O container onde os itens começam
+        const winMessage = document.getElementById('win-message'); // A mensagem de parabéns
+
+        // --- FUNÇÃO DE RESET DO JOGO ---
+        // Esta função é responsável por colocar o jogo de volta ao seu estado inicial
+        function resetQuiz() {
+            // Garante que a mensagem de parabéns esteja escondida. '.style.display' sobrepõe o CSS
+            winMessage.style.display = 'none';
+
+            // Itera sobre cada item arrastável
+            draggables.forEach(item => {
+                // Remove a classe '.correct' para limpar o estilo de acerto (fundo verde)
+                item.classList.remove('correct');
+                // Reativa a capacidade de arrastar o item, caso tenha sido desativada após um acerto
+                item.setAttribute('draggable', 'true');
+                // Move o item de volta para o container de opções inicial
+                optionsContainer.appendChild(item);
+            });
+        }
+        
+        // --- EVENTO 'PAGESHOW' PARA GARANTIR O RESET ---
+        // O evento 'pageshow' é acionado toda vez que a página é exibida pelo navegador.
+        // Isso inclui o primeiro carregamento e, crucialmente, quando o usuário usa o botão "Voltar".
+        // Isso resolve o problema do cache do navegador (bfcache) que mantinha o jogo no estado completo.
+        window.addEventListener('pageshow', resetQuiz);
+
+        // --- LÓGICA DE DRAG AND DROP ---
+        // Itera sobre cada elemento arrastável para adicionar os ouvintes de eventos de arrasto
+        draggables.forEach(draggable => { 
+            // Disparado quando o usuário começa a arrastar o item
+            draggable.addEventListener('dragstart', (event) => { 
+                // Adiciona uma classe para feedback visual (opcional)
+                draggable.classList.add('dragging'); 
+                // Armazena o ID do item sendo arrastado para que possamos identificá-lo quando ele for solto
+                event.dataTransfer.setData('text/plain', draggable.id); 
+            });
+
+            // Disparado quando o usuário solta o item (fim do arrasto)
+            draggable.addEventListener('dragend', () => { 
+                // Remove a classe de feedback visual
+                draggable.classList.remove('dragging'); 
+            });
+        });
+
+        // Itera sobre cada zona de soltar para adicionar os ouvintes de eventos de soltar
+        dropZones.forEach(zone => { 
+            // Disparado continuamente enquanto um item é arrastado sobre a zona
+            zone.addEventListener('dragover', event => { 
+                // Previne o comportamento padrão do navegador, que é proibir o drop. Essencial para funcionar.
+                event.preventDefault(); 
+                // Adiciona uma classe para indicar que a zona está pronta para receber o item
+                zone.classList.add('hovered'); 
+            });
+
+            // Disparado quando o item arrastado sai da zona
+            zone.addEventListener('dragleave', () => { 
+                // Remove a classe de feedback visual
+                zone.classList.remove('hovered'); 
+            });
+
+            // Disparado no momento exato em que o item é solto sobre a zona
+            zone.addEventListener('drop', event => { 
+                // Previne o comportamento padrão
+                event.preventDefault(); 
+                // Remove a classe de feedback visual
+                zone.classList.remove('hovered'); 
+                // Pega o ID do item que foi armazenado no 'dragstart'
+                const id = event.dataTransfer.getData('text'); 
+                // Pega o elemento HTML real usando o ID
+                const draggableElement = document.getElementById(id); 
+                
+                // Se o item já foi acertado, não faz nada
+                if (draggableElement.classList.contains('correct')) {
+                    return;
+                }
+
+                // Pega a categoria do item e da zona para comparar
+                const draggableCategory = draggableElement.dataset.category; 
+                const zoneCategory = zone.dataset.category; 
+
+                // Se as categorias correspondem (acerto)
+                if (draggableCategory === zoneCategory) { 
+                    draggableElement.classList.add('correct'); // Aplica o estilo de acerto
+                    draggableElement.setAttribute('draggable', 'false'); // Impede que seja arrastado novamente
+                    zone.appendChild(draggableElement); // Move o item para dentro da zona
+
+                    // --- LÓGICA DE VITÓRIA ---
+                    // Recalcula o total de itens e quantos foram acertados a cada acerto
+                    const totalDraggables = draggables.length;
+                    const correctDraggables = document.querySelectorAll('.draggable.correct').length;
+
+                    // Se o número de acertos for igual ao total de itens, o usuário venceu
+                    if (totalDraggables === correctDraggables) {
+                        // Exibe a mensagem de parabéns
+                        winMessage.style.display = 'block';
+                    }
+
+                } else { // Se as categorias não correspondem (erro)
+                    // Adiciona a classe de erro que ativa a animação de tremer e o fundo vermelho
+                    draggableElement.classList.add('shake-error'); 
+
+                    // Define um temporizador para remover a classe de erro após 500ms, tornando o efeito temporário
+                    setTimeout(() => { 
+                        draggableElement.classList.remove('shake-error'); 
+                    }, 500);
+                }
+            });
+        });
+    </script> <!-- Fim do bloco de JavaScript -->
+</body> <!-- Fim do corpo do documento -->
+
+</html> <!-- Fim do documento HTML -->
