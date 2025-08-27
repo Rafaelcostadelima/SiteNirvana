@@ -37,7 +37,7 @@
         <section id="contato">
             <h1>Contato</h1>
             <div class="container-form">
-                <form class="formulario-contato" action="https://formsubmit.co/rafita.limagames@gmail.com" method="POST">
+                <form class="formulario-contato" action="https://formsubmit.co/rafita.limagames2@gmail.com" method="POST">
                     <div class="nome-container">
                         <label for="Nome completo">Nome completo:</label><br>
                         <input type="text" id="Nome completo" name="Nome completo" value="">
@@ -65,14 +65,30 @@
                         <input type="radio" id="guitarrap" name="instrumento" value="Guitarra principal"> Guitarra principal <br>
                         <input type="radio" id="bateria" name="instrumento" value="Bateria"> Bateria
                     </div>
+
                     <div class="genero-container">
-                        <label for="Genero">Gênero:</label><br>
-                        <input list="Genero">
-                        <datalist id="Genero">
-                            <option value="Masculino">
-                            <option value="Feminino">
-                        </datalist>
+                        <label>Gênero:</label><br>
+                        <input type="radio" id="masculino" name="genero" value="Masculino"> Masculino<br>
+                        <input type="radio" id="feminino" name="genero" value="Feminino"> Feminino<br>
+                        <input type="radio" id="outro" name="genero" value="Outro"> Outro<br>
+                        <input type="radio" id="nao-informar" name="genero" value="Prefiro não informar"> Prefiro não informar
                     </div>
+
+                    <div class="nota-container">
+                        <label for="nota">Que nota você dá para o site? (0-10):</label><br>
+                        <input type="range" id="nota" name="nota" min="0" max="10" value="5">
+                    </div>
+                    
+                    <div class="cor-container">
+                        <label for="cor-favorita">Qual cor te lembra o Nirvana?</label><br>
+                        <input type="color" id="cor-favorita" name="cor-favorita" value="#e7e113">
+                    </div>
+
+                    <div class="telefone-container">
+                        <label for="telefone">Telefone (opcional):</label><br>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX">
+                    </div>
+
                     <div class="mensagem-container">
                         <label>Escreva um comentário sobre a banda Nirvana:</label><br>
                         <textarea name="Mensagem" id="mensagem" rows="10" cols="30"></textarea><br><br>
@@ -80,7 +96,7 @@
                     <div>
                         <input type="submit" value="Enviar" id="botao">
                         <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="">
+                        <input type="hidden" name="_next" value="enviadocomsucesso.html">
                     </div>
                     
                 </form>

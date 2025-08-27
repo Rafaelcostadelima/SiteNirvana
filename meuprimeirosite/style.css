@@ -458,17 +458,42 @@ footer {
   transform: scale(0.99);
 }
 
+/* Enviado com sucesso */
+.container-sucesso{
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.sucesso{
+  background-color: rgb(31, 133, 31);
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+/* Tabela */
 .container-tabela {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 40px;
+  padding: 0px 20px;
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse; /* border-collapse serve pra unir as bordas das células */
+  width: 100%;
+  min-width: 600px;
 }
 
 table,
 td {
   padding: 10px;
   border: gray solid 1px;
+  white-space: nowrap;
 }
 
 thead {
@@ -476,6 +501,55 @@ thead {
   background-image: linear-gradient(to bottom right, #bdb831, #888525);
   color: #111112;
   border: gray solid 1px;
+}
+
+/* responsividade da tabela */
+.container-form {
+  display: flex;
+  margin: auto;
+  border-radius: 50px;
+  padding: 40px;
+  max-width: 1000px;
+  width: 90%;
+  justify-content: center;
+  background-color: #2e303373;
+  box-shadow: rgb(94, 95, 95) 4px 4px 25px 2px;
+}
+
+.formulario-contato > div {
+  margin-bottom: 20px;
+}
+
+.formulario-contato > div:last-child {
+  margin-bottom: 0;
+}
+
+.formulario-contato input[type="text"],
+.formulario-contato input[type="email"],
+.formulario-contato input[type="date"],
+.formulario-contato input[type="tel"],
+.formulario-contato input[list="Genero"],
+.formulario-contato select,
+.formulario-contato textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+  color: #111;
+}
+
+.formulario-contato input[type="range"] {
+  width: 100%;
+}
+
+@media (max-width: 850px) {
+  .container-form {
+      padding: 30px 20px;
+      width: 95%;
+  }
 }
 
 /* Estiliza a seção que contém todo o jogo */
